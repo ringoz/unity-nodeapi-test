@@ -8,5 +8,5 @@ while (true) {
   queueMicrotask(() => console.log('a'));
   await Promise.resolve();
   queueMicrotask(() => console.log('b'));
-  await new Promise(setTimeout);
+  await new Promise((resolve) => setTimeout(resolve, 0));
 }
