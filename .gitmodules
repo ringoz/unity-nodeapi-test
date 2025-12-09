@@ -1,0 +1,3 @@
+[submodule "unode-module/Packages/net.ringoz.unity.nodeapi"]
+	path = unode-module/Packages/net.ringoz.unity.nodeapi
+	url = https://github.com/ringoz/unity-nodeapi.git
