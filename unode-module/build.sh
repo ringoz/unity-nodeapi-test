@@ -11,7 +11,6 @@ case "$OSTYPE" in
     ;;
   darwin*)
     RID=osx-arm64
-    export IL2CPP_ADDITIONAL_ARGS="--linker-flags=\"-lfcontext -LPackages/net.ringoz.unity.nodeapi/Runtime/lib\""
     /Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app/Contents/MacOS/Unity -quit -batchmode -nographic -logFile - -projectPath "." -buildOSXUniversalPlayer "Build.app"
     ;;
 esac
