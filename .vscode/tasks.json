@@ -8,7 +8,10 @@
       "type": "shell",
       "command": "./build.sh",
       "windows": {
-        "command": "./build.cmd"
+        "command": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "args": [
+          "./build.sh"
+        ]
       },
       "options": {
         "cwd": "${workspaceFolder}/unode-module"
