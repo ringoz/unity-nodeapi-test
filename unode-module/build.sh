@@ -5,9 +5,9 @@ UNITY_VERSION=$(head -n 1 ProjectSettings/ProjectVersion.txt | cut -d ' ' -f 2)
 case "$OSTYPE" in
   msys*)
     RID=win-x64
-    mv --force "Build_BackUpThisFolder_ButDontShipItWithYourGame" "Build.app/unode-module_BackUpThisFolder_ButDontShipItWithYourGame"
-    "C:/Program Files/Unity/Hub/Editor/$UNITY_VERSION/Editor/Unity.com" -quit -batchmode -nographic -logFile - -projectPath "." -buildWindows64Player "Build.app/unode-module.exe"
-    mv --force "Build.app/unode-module_BackUpThisFolder_ButDontShipItWithYourGame" "Build_BackUpThisFolder_ButDontShipItWithYourGame"
+    mv --force "Build_BackUpThisFolder_ButDontShipItWithYourGame" "Build.app/UnityPlayer_BackUpThisFolder_ButDontShipItWithYourGame" || true
+    "C:/Program Files/Unity/Hub/Editor/$UNITY_VERSION/Editor/Unity.com" -quit -batchmode -nographic -logFile - -projectPath "." -buildWindows64Player "Build.app/UnityPlayer.exe"
+    mv --force "Build.app/UnityPlayer_BackUpThisFolder_ButDontShipItWithYourGame" "Build_BackUpThisFolder_ButDontShipItWithYourGame"
     ;;
   darwin*)
     RID=osx-arm64
