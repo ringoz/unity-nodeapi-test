@@ -8,7 +8,9 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "outputCapture": "std",
+      "windows": {
+        "outputCapture": "std",
+      },
       "program": "${workspaceFolder}/test.mjs"
     }
   ]
