@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "noEmit": true, // Don't generate .js files
+    "erasableSyntaxOnly": true, // Only allow TypeScript syntax that node can strip out. Enums and namespaces for example are not allowed
+    "allowImportingTsExtensions": true, // Allow importing of .ts files
+    "verbatimModuleSyntax": true // Make sure imports will be valid when the script is run by node directly
+  }
+}
