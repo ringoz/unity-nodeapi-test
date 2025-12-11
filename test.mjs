@@ -1,7 +1,7 @@
 import { hello } from './unode-module/index.mjs';
 
 console.log('Hello from Node.js');
-hello();
+hello('Hello world!');
 
 while (true) {
   console.log(Date.now());
