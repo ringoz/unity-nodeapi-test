@@ -632,7 +632,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  additionalIl2CppArgs: --compiler-flags="-DIL2CPP_DEBUG=0" --linker-flags="-lfcontext -LPackages/net.ringoz.unity.nodeapi/Runtime/lib"
+  additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
   gcWBarrierValidation: 0
