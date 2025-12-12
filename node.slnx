@@ -5,7 +5,7 @@
   </Configurations>
   <Project Path="C:/Program Files/nodejs/node.exe">
     <Properties Name="DebuggerProjectSystem">
-      <Property Name="Arguments" Value="test.mjs" />
+      <Property Name="Arguments" Value="." />
       <Property Name="AttachLaunchAction" Value="No" />
       <Property Name="Environment" Value="Default" />
       <Property Name="Executable" Value="C:\Program Files\nodejs\node.exe" />

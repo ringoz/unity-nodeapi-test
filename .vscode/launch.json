@@ -11,7 +11,7 @@
       "windows": {
         "outputCapture": "std",
       },
-      "program": "${workspaceFolder}/test.mjs"
+      "program": "."
     }
   ]
 }

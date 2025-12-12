@@ -13,5 +13,8 @@
     "erasableSyntaxOnly": true, // Only allow TypeScript syntax that node can strip out. Enums and namespaces for example are not allowed
     "allowImportingTsExtensions": true, // Allow importing of .ts files
     "verbatimModuleSyntax": true // Make sure imports will be valid when the script is run by node directly
-  }
+  },
+  "include": [
+    "src"
+  ]
 }
