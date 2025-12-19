@@ -9,7 +9,7 @@ case "$OSTYPE" in
     GENTS=$(pwd)/../../node-api-dotnet/out/bin/Release/NodeApi.Generator/net10.0/win-x64/Microsoft.JavaScript.NodeApi.Generator
     UNITY="C:/Program Files/Unity/Hub/Editor/$UNITY_VERSION/Editor/Unity.com"
     #"$UNITY" -quit -batchmode -nographic -logFile - -projectPath "." -buildWindows64Player "Build.app/UnityPlayer.exe"
-    #cd Build.app/UnityPlayer_BackUpThisFolder_ButDontShipItWithYourGame
+    #cd Build.app/UnityPlayer_BackUpThisFolder_ButDontShipItWithYourGame/Managed/
     ;;
   darwin*)
     GENTS=$(pwd)/../../node-api-dotnet/out/bin/Release/NodeApi.Generator/net10.0/osx-arm64/Microsoft.JavaScript.NodeApi.Generator
