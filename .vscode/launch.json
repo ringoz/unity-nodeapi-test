@@ -7,11 +7,21 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch Node",
       "windows": {
         "outputCapture": "std",
       },
       "program": "."
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "webRoot": "${workspaceFolder}",
+      "enableContentValidation": false,
+      "runtimeArgs": [
+        "--app=http://localhost:5173"
+      ]
     }
   ]
 }
