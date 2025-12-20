@@ -19,9 +19,7 @@
       "name": "Launch Chrome",
       "webRoot": "${workspaceFolder}",
       "enableContentValidation": false,
-      "runtimeArgs": [
-        "--app=http://localhost:5173"
-      ]
+      "url": "http://localhost:5173"
     }
   ]
 }
