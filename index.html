@@ -21,23 +21,6 @@
   <body style="padding: 0; border: 0; margin: 0; ">
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build.web.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        arguments: [],
-        dataUrl: "Build.web.data",
-        frameworkUrl: "Build.web.framework.js",
-        codeUrl: "Build.web.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "unode-module",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      }).then((unityInstance) => {
-      }).catch((message) => {
-        alert(message);
-      });
-    </script>    
     <div id="html-root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

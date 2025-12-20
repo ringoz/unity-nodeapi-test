@@ -1,4 +1,4 @@
-import { hello } from "../unode-module/index.ts";
+import { hello } from "../unode-module/index.mts";
 
 console.log('Hello from Node.js');
 hello('Hello world!');
