@@ -10,15 +10,18 @@
       border: 0;
       margin: 0;
       display: grid;
+      outline: none;
+      background-color: black;
     }
     body > * {
       width: 100dvw;
       height: 100dvh;
+      overflow: hidden;
       grid-column: 1;
       grid-row: 1;
     }
   </style>
-  <body style="padding: 0; border: 0; margin: 0; ">
+  <body>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build.web.loader.js"></script>
     <div id="html-root"></div>
