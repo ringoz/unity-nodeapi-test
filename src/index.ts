@@ -1,4 +1,4 @@
-import { hello } from "../unode-module/index.ts";
+import { hello } from 'net.ringoz.unity.nodeapi';
 
 console.log('Hello from Node.js');
 hello('Hello world!');

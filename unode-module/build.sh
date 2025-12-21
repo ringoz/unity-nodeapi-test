@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-DTS_OUT=$(pwd)/Packages/net.ringoz.unity.nodeapi/Runtime/Unity.NodeApi.d.ts
+DTS_OUT=$(pwd)/Packages/net.ringoz.unity.nodeapi/index.d.ts
 UNITY_VERSION=$(head -n 1 ProjectSettings/ProjectVersion.txt | cut -d ' ' -f 2)
 
 case "$OSTYPE" in
