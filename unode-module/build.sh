@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-DTS_OUT=$(pwd)/Packages/net.ringoz.unity.nodeapi/index.d.ts
+JS_OUT=$(pwd)/Packages/net.ringoz.unity.nodeapi
 UNITY_VERSION=$(head -n 1 ProjectSettings/ProjectVersion.txt | cut -d ' ' -f 2)
 
 case "$OSTYPE" in
@@ -23,4 +23,4 @@ esac
 cd Library/Bee/artifacts/WebGL/ManagedStripped/
 
 NET_REFS=$(find . -name "*.dll" -type f -print0 | sed 's/.\//;/g')
-"$GENTS" --assembly "Unity.NodeApi.dll" --reference "$NET_REFS" --typedefs "$DTS_OUT" --framework "netstandard2.1"
+"$GENTS" --assembly "Unity.NodeApi.dll" --reference "$NET_REFS" --typedefs "$JS_OUT/index.d.ts" --module "$JS_OUT/package.json" --framework "netstandard2.1"
