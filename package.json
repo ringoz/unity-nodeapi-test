@@ -1,5 +1,6 @@
 {
   "name": "unity-nodeapi-test",
+  "author": "Vladimir Davidovich",
   "version": "0.0.0",
   "type": "module",
   "main": "./src/index.ts",
