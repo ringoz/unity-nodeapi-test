@@ -1,7 +1,5 @@
-import { hello } from 'net.ringoz.unity.nodeapi';
-
-console.log('Hello from Node.js');
-hello('Hello world!');
+import { rendererPackageName, rendererVersion } from 'net.ringoz.unity.nodeapi';
+console.log(`${rendererPackageName} v${rendererVersion}`);
 
 const running = true;
 while (running) {
