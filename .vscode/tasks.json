@@ -11,12 +11,7 @@
         "command": "C:\\Program Files\\Git\\bin\\bash.exe",
         "args": [
           "./build.sh"
-        ],
-        "options": {
-          "env": {
-            "UNITY_PROXYSERVER": ""
-          }
-        }
+        ]
       },
       "options": {
         "cwd": "${workspaceFolder}/unode-module"
