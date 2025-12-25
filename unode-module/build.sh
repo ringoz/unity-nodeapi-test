@@ -6,13 +6,13 @@ UNITY_VERSION=$(head -n 1 ProjectSettings/ProjectVersion.txt | cut -d ' ' -f 2)
 
 case "$OSTYPE" in
   msys*)
-    GENTS=$(pwd)/../../node-api-dotnet/out/bin/Release/NodeApi.Generator/net10.0/win-x64/Microsoft.JavaScript.NodeApi.Generator
     UNITY="C:/Program Files/Unity/Hub/Editor/$UNITY_VERSION/Editor/Unity.com"
+    DOTNET="C:/Program Files/Unity/Hub/Editor/$UNITY_VERSION/Editor/Data/NetCoreRuntime"
+    ROSLYN="C:/Program Files/Unity/Hub/Editor/$UNITY_VERSION/Editor/Data/DotNetSdkRoslyn"
     #"$UNITY" -quit -batchmode -nographic -logFile - -projectPath "." -buildWindows64Player "Build.app/UnityPlayer.exe"
     #cd Build.app/UnityPlayer_BackUpThisFolder_ButDontShipItWithYourGame/Managed/
     ;;
   darwin*)
-    GENTS=$(pwd)/../../node-api-dotnet/out/bin/Release/NodeApi.Generator/net10.0/osx-arm64/Microsoft.JavaScript.NodeApi.Generator
     UNITY=/Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app/Contents/MacOS/Unity
     #"$UNITY" -quit -batchmode -nographic -logFile - -projectPath "." -buildOSXUniversalPlayer "Build.app"
     #cd Build_BackUpThisFolder_ButDontShipItWithYourGame/Managed/
@@ -23,4 +23,5 @@ esac
 cd Library/Bee/artifacts/WebGL/ManagedStripped/
 
 NET_REFS=$(find . -name "*.dll" -type f -print0 | sed 's/.\//;/g')
-"$GENTS" --assembly "Unity.NodeApi.dll" --reference "$NET_REFS" --typedefs "$JS_OUT/index.d.ts" --module "$JS_OUT/package.json" --framework "netstandard2.1"
+"$DOTNET/dotnet" exec --runtimeconfig "$ROSLYN/csc.runtimeconfig.json" \
+  "$JS_OUT/Runtime/node-api-dotnet/Microsoft.JavaScript.NodeApi.Generator.dll" --assembly "Unity.NodeApi.dll" --reference "$NET_REFS" --typedefs "$JS_OUT/index.d.ts" --module "$JS_OUT/package.json" --framework "netstandard2.1"
