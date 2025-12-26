@@ -25,6 +25,7 @@
       "DOM.Iterable"
     ],
     "types": [
+      "node",
       "vite/client"
     ],
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo"
