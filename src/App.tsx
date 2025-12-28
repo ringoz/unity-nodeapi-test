@@ -4,7 +4,7 @@ import { useState } from 'react'
 function App() {
   return (
     <>
-      <sphere>
+      <sphere name="sphere1">
       </sphere>
     </>
   )
