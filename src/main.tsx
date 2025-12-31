@@ -1,6 +1,7 @@
-import { createRoot } from 'net.ringoz.unity.nodeapi/react'
-import App from './App.tsx'
+import { GameObject } from 'net.ringoz.unity.nodeapi';
+import { createRoot } from 'net.ringoz.unity.nodeapi/react';
+import App from './App.tsx';
 
-createRoot().render(
+createRoot(GameObject.find("ReactRoot")).render(
   <App />
 );

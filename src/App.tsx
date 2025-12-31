@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <sphere name="sphere1">
-        <transform position="(1,2,3)" />
+        <transform localScale="(3,3,3)" />
       </sphere>
     </>
   )
