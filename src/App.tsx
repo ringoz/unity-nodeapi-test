@@ -1,10 +1,15 @@
 // @ts-nocheck
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
+import { prefab } from 'net.ringoz.unity.nodeapi/react'
+
+const CubeSpin = prefab('cubeSpin');
 
 function App() {
   return (
     <>
-      <cubeSpin />
+      <Suspense fallback={<capsule />}>
+        <CubeSpin />
+      </Suspense>
       <sphere name="sphere1">
         <transform localScale="2 2 2" localPosition="1 2 3" />
         <object>
