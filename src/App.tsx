@@ -4,6 +4,7 @@ import { useState } from 'react'
 function App() {
   return (
     <>
+      <cubeSpin />
       <sphere name="sphere1">
         <transform localScale="2 2 2" localPosition="1 2 3" />
         <object>
