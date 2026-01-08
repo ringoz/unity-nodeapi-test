@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8132729008622774636}
   - component: {fileID: 5695208430758174090}
   m_Layer: 0
-  m_Name: cubeSpin
+  m_Name: CubeSpin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

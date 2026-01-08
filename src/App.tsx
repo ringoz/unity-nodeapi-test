@@ -2,7 +2,7 @@
 import { Suspense, useState } from 'react'
 import { prefab } from 'net.ringoz.unity.nodeapi/react'
 
-const CubeSpin = prefab('cubeSpin');
+const CubeSpin = prefab('CubeSpin');
 
 function App() {
   return (
