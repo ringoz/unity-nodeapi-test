@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  publicDir: './unode-module/Build.web/Build',
+  publicDir: './unode-module/Build.web',
   plugins: [
     react({
       babel: {

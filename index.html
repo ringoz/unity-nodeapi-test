@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, height=device-height, viewport-fit=cover" />
     <title>Unity Node Api Test</title>
-    <script type="module">
-      import { author, version } from './package.json';
-      { const meta = document.createElement("meta"); meta.name = "author"; meta.content = author; document.head.appendChild(meta); }
-      { const meta = document.createElement("meta"); meta.name = "version"; meta.content = version; document.head.appendChild(meta); }
-    </script>
   </head>
   <style>
     body {
@@ -29,7 +24,7 @@
   </style>
   <body>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
-    <script src="Build.web.loader.js"></script>
+    <script src="Build/Build.web.loader.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
