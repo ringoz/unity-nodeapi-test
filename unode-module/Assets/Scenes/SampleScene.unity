@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1183958779}
   m_Layer: 0
-  m_Name: ReactRoot
+  m_Name: React Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 2072565219}
   - component: {fileID: 2072565218}
   m_Layer: 5
-  m_Name: UIDocument
+  m_Name: UI Document
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
