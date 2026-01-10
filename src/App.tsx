@@ -1,4 +1,4 @@
-import { asset, Capsule, Cube, GameObject, Cylinder, Sphere, Transform } from 'net.ringoz.unity.nodeapi/react';
+import { asset, Capsule, Cube, GameObject, Cylinder, Sphere, Transform } from 'unode-module';
 import { Suspense } from 'react';
 
 const CubeSpin = asset('CubeSpin');
