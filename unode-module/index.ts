@@ -1,4 +1,4 @@
-import type { Boolean, Color, Component, Int16, Int32, Matrix4x4, ObjectBase, Quaternion, Single, UInt16, UInt32, Vector2, Vector3, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
+import type { Boolean, Bounds, Color, Component, Int16, Int32, Matrix4x4, ObjectBase, Quaternion, Single, UInt16, UInt32, Vector2, Vector3, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
 import { intrinsic } from './Packages/net.ringoz.unity.nodeapi/react';
 
 export * from './Packages/net.ringoz.unity.nodeapi';
@@ -36,8 +36,8 @@ export interface Behaviour extends Component {
 export const Behaviour = intrinsic<Behaviour>("Behaviour");
 
 export interface Renderer extends Component {
-//bounds: Bounds;
-//localBounds: Bounds;
+  bounds: Bounds;
+  localBounds: Bounds;
   enabled: Boolean;
   readonly isVisible: Boolean;
 //shadowCastingMode: ShadowCastingMode;
@@ -104,7 +104,7 @@ export interface Mesh extends ObjectBase {
   readonly isReadable: Boolean;
   readonly vertexCount: Int32;
   subMeshCount: Int32;
-//bounds: Bounds;
+  bounds: Bounds;
 //vertices: Vector3[];
 //normals: Vector3[];
 //tangents: Vector4[];
