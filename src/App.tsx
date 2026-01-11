@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<Capsule />}>
-        <CubeSpin hideFlags='None' />
+        <CubeSpin hideFlags={['None', 'NotEditable']} />
       </Suspense>
       <Sphere name="sphere1">
         <Transform localScale={[2, 2, 2]} localPosition={[1, 2, 3]} />

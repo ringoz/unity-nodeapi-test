@@ -33,7 +33,7 @@ export interface Renderer extends Component {
   renderingLayerMask: UInt32;
   rendererPriority: Int32;
   rayTracingMode: RayTracingMode;
-  rayTracingAccelerationStructureBuildFlags: RayTracingAccelerationStructureBuildFlags;
+  rayTracingAccelerationStructureBuildFlags: RayTracingAccelerationStructureBuildFlags[];
   rayTracingAccelerationStructureBuildFlagsOverride: Boolean;
   sortingLayerName: String;
   sortingLayerID: Int32;
@@ -124,7 +124,7 @@ export interface Material extends ObjectBase {
   renderQueue: Int32;
   readonly rawRenderQueue: Int32;
 //enabledKeywords: LocalKeyword[];
-  globalIlluminationFlags: MaterialGlobalIlluminationFlags;
+  globalIlluminationFlags: MaterialGlobalIlluminationFlags[];
   doubleSidedGI: Boolean;
   enableInstancing: Boolean;
   readonly passCount: Int32;
