@@ -3,6 +3,7 @@ using UnityEngine.AddressableAssets;
 using Unity.Properties;
 
 [assembly: GeneratePropertyBagsForType(typeof(Behaviour))]
+[assembly: GeneratePropertyBagsForType(typeof(Camera))]
 //[assembly: GeneratePropertyBagsForType(typeof(Animation))]
 [assembly: GeneratePropertyBagsForType(typeof(Renderer))]
 [assembly: GeneratePropertyBagsForType(typeof(MeshRenderer))]
