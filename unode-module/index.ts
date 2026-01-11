@@ -1,4 +1,4 @@
-import type { Boolean, Bounds, Color, Component, GameObject, Int16, Int32, Matrix4x4, ObjectBase, Ptr, Rect, Single, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
+import type { Boolean, Bounds, Color, Component, GameObject, Int16, Int32, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
 import { intrinsic } from './Packages/net.ringoz.unity.nodeapi/react';
 
 export * from './Packages/net.ringoz.unity.nodeapi';
@@ -93,6 +93,59 @@ export interface Camera extends Behaviour {
   readonly commandBufferCount: Int32;
 }
 export const Camera = intrinsic<Camera>("Camera");
+
+export type AnimatorUpdateMode = 'Normal' | 'Fixed' | 'AnimatePhysics' | 'UnscaledTime';
+export type AnimatorCullingMode = 'AlwaysAnimate' | 'CullUpdateTransforms' | 'BasedOnRenderers' | 'CullCompletely';
+export type AnimatorRecorderMode = 'Offline' | 'Playback' | 'Record';
+export interface Animator extends Behaviour {
+  readonly isOptimizable: Boolean;
+  readonly isHuman: Boolean;
+  readonly hasRootMotion: Boolean;
+  readonly humanScale: Single;
+  readonly isInitialized: Boolean;
+  readonly deltaPosition: Vector3;
+  readonly deltaRotation: Quaternion;
+  readonly velocity: Vector3;
+  readonly angularVelocity: Vector3;
+  rootPosition: Vector3;
+  rootRotation: Quaternion;
+  applyRootMotion: Boolean;
+  animatePhysics: Boolean;
+  updateMode: AnimatorUpdateMode;
+  readonly hasTransformHierarchy: Boolean;
+  readonly gravityWeight: Single;
+  bodyPosition: Vector3;
+  bodyRotation: Quaternion;
+  stabilizeFeet: Boolean;
+  readonly layerCount: Int32;
+//readonly parameters: AnimatorControllerParameter[];
+  readonly parameterCount: Int32;
+  feetPivotActive: Single;
+  readonly pivotWeight: Single;
+  readonly pivotPosition: Vector3;
+  readonly isMatchingTarget: Boolean;
+  speed: Single;
+  readonly targetPosition: Vector3;
+  readonly targetRotation: Quaternion;
+  readonly avatarRoot: Ptr<Transform>;
+  cullingMode: AnimatorCullingMode;
+  playbackTime: Single;
+  recorderStartTime: Single;
+  recorderStopTime: Single;
+  readonly recorderMode: AnimatorRecorderMode;
+//runtimeAnimatorController: RuntimeAnimatorController;
+  readonly hasBoundPlayables: Boolean;
+//avatar: Avatar;
+//readonly playableGraph: PlayableGraph;
+  layersAffectMassCenter: Boolean;
+  readonly leftFeetBottomHeight: Single;
+  readonly rightFeetBottomHeight: Single;
+  logWarnings: Boolean;
+  fireEvents: Boolean;
+  keepAnimatorStateOnDisable: Boolean;
+  writeDefaultValuesOnDisable: Boolean;
+}
+export const Animator = intrinsic<Animator>("Animator");
 
 export type ShadowCastingMode = 'Off' | 'On' | 'TwoSided' | 'ShadowsOnly';
 export type MotionVectorGenerationMode = 'Camera' | 'Object' | 'ForceNoMotion';
@@ -190,7 +243,7 @@ export interface Mesh extends ObjectBase {
   lodCount: Int32;
 //lodSelectionCurve: LodSelectionCurve;
   readonly vertexAttributeCount: Int32;
-//triangles: Int32[];
+  triangles: Int32[];
 //boneWeights: BoneWeight[];
   readonly skinWeightBufferLayout: SkinWeights;
 }
