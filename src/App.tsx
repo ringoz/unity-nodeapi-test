@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<Capsule />}>
-        <CubeSpin />
+        <CubeSpin hideFlags='None' />
       </Suspense>
       <Sphere name="sphere1">
         <Transform localScale={[2, 2, 2]} localPosition={[1, 2, 3]} />

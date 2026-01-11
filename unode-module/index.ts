@@ -12,22 +12,28 @@ export interface Behaviour extends Component {
 }
 export const Behaviour = intrinsic<Behaviour>("Behaviour");
 
+export type ShadowCastingMode = 'Off' | 'On' | 'TwoSided' | 'ShadowsOnly';
+export type MotionVectorGenerationMode = 'Camera' | 'Object' | 'ForceNoMotion';
+export type LightProbeUsage = 'Off' | 'BlendProbes' | 'UseProxyVolume' | 'CustomProvided';
+export type ReflectionProbeUsage = 'Off' | 'BlendProbes' | 'BlendProbesAndSkybox' | 'Simple';
+export type RayTracingMode = 'Off' | 'Static' | 'DynamicTransform' | 'DynamicGeometry' | 'DynamicGeometryManualUpdate';
+export type RayTracingAccelerationStructureBuildFlags = 'None' | 'PreferFastTrace' | 'PreferFastBuild' | 'MinimizeMemory';
 export interface Renderer extends Component {
   bounds: Bounds;
   localBounds: Bounds;
   enabled: Boolean;
   readonly isVisible: Boolean;
-//shadowCastingMode: ShadowCastingMode;
+  shadowCastingMode: ShadowCastingMode;
   receiveShadows: Boolean;
   forceRenderingOff: Boolean;
   staticShadowCaster: Boolean;
-//motionVectorGenerationMode: MotionVectorGenerationMode;
-//lightProbeUsage: LightProbeUsage;
-//reflectionProbeUsage: ReflectionProbeUsage;
+  motionVectorGenerationMode: MotionVectorGenerationMode;
+  lightProbeUsage: LightProbeUsage;
+  reflectionProbeUsage: ReflectionProbeUsage;
   renderingLayerMask: UInt32;
   rendererPriority: Int32;
-//rayTracingMode: RayTracingMode;
-//rayTracingAccelerationStructureBuildFlags: RayTracingAccelerationStructureBuildFlags;
+  rayTracingMode: RayTracingMode;
+  rayTracingAccelerationStructureBuildFlags: RayTracingAccelerationStructureBuildFlags;
   rayTracingAccelerationStructureBuildFlagsOverride: Boolean;
   sortingLayerName: String;
   sortingLayerID: Int32;
@@ -53,12 +59,13 @@ export interface Renderer extends Component {
 }
 export const Renderer = intrinsic<Renderer>("Renderer");
 
+export type ReceiveGI = 'Lightmaps' | 'LightProbes';
 export interface MeshRenderer extends Renderer {
   additionalVertexStreams: Ptr<Mesh>;
   enlightenVertexStream: Ptr<Mesh>;
   readonly subMeshStartIndex: Int32;
   scaleInLightmap: Single;
-//receiveGI: ReceiveGI;
+  receiveGI: ReceiveGI;
   stitchLightmapSeams: Boolean;
   globalIlluminationMeshLod: UInt16;
 }
@@ -70,11 +77,14 @@ export interface MeshFilter extends Component {
 }
 export const MeshFilter = intrinsic<MeshFilter>("MeshFilter");
 
+export type IndexFormat = 'UInt16' | 'UInt32';
+export type Target = 'Vertex' | 'Index' | 'CopySource' | 'CopyDestination' | 'Structured' | 'Raw' | 'Append' | 'Counter' | 'IndirectArguments' | 'Constant';
+export type SkinWeights = 'None' | 'OneBone' | 'TwoBones' | 'FourBones' | 'Unlimited';
 export interface Mesh extends ObjectBase {
-//indexFormat: IndexFormat;
+  indexFormat: IndexFormat;
   readonly vertexBufferCount: Int32;
-//vertexBufferTarget: Target;
-//indexBufferTarget: Target;
+  vertexBufferTarget: Target;
+  indexBufferTarget: Target;
   readonly blendShapeCount: Int32;
   readonly bindposeCount: Int32;
 //bindposes: Matrix4x4[];
@@ -100,10 +110,11 @@ export interface Mesh extends ObjectBase {
   readonly vertexAttributeCount: Int32;
 //triangles: Int32[];
 //boneWeights: BoneWeight[];
-//readonly skinWeightBufferLayout: SkinWeights;
+  readonly skinWeightBufferLayout: SkinWeights;
 }
 export const Mesh = intrinsic<Mesh>("Mesh");
 
+export type MaterialGlobalIlluminationFlags = 'None' | 'RealtimeEmissive' | 'BakedEmissive' | 'AnyEmissive' | 'EmissiveIsBlack';
 export interface Material extends ObjectBase {
 //shader: Shader;
   color: Color;
@@ -113,7 +124,7 @@ export interface Material extends ObjectBase {
   renderQueue: Int32;
   readonly rawRenderQueue: Int32;
 //enabledKeywords: LocalKeyword[];
-//globalIlluminationFlags: MaterialGlobalIlluminationFlags;
+  globalIlluminationFlags: MaterialGlobalIlluminationFlags;
   doubleSidedGI: Boolean;
   enableInstancing: Boolean;
   readonly passCount: Int32;
