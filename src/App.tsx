@@ -14,7 +14,7 @@ function App() {
         <GameObject>
           <Transform localScale={[0.5, 0.5, 0.5]} />
           <Cylinder>
-            <Transform localPosition={[0, 1, 1]} />
+            <Transform localPosition-y={1} />
           </Cylinder>
           <Cube>
             <Transform localPosition={[-1, -1, -1]} />
