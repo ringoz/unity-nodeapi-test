@@ -1,33 +1,10 @@
-import type { Boolean, Bounds, Color, Component, Int16, Int32, Matrix4x4, ObjectBase, Quaternion, Single, UInt16, UInt32, Vector2, Vector3, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
+import type { Boolean, Bounds, Color, Component, GameObject, Int16, Int32, Matrix4x4, ObjectBase, Ptr, Single, Transform, UInt16, UInt32, Vector2, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
 import { intrinsic } from './Packages/net.ringoz.unity.nodeapi/react';
 
 export * from './Packages/net.ringoz.unity.nodeapi';
 export * from './Packages/net.ringoz.unity.nodeapi/react';
 
 //#region generated
-
-export interface Transform extends Component {
-  position: Vector3;
-  localPosition: Vector3;
-  eulerAngles: Vector3;
-  localEulerAngles: Vector3;
-  right: Vector3;
-  up: Vector3;
-  forward: Vector3;
-  rotation: Quaternion;
-  localRotation: Quaternion;
-  localScale: Vector3;
-//parent: Transform;
-  readonly worldToLocalMatrix: Matrix4x4;
-  readonly localToWorldMatrix: Matrix4x4;
-//readonly root: Transform;
-  readonly childCount: Int32;
-  readonly lossyScale: Vector3;
-  hasChanged: Boolean;
-  hierarchyCapacity: Int32;
-  readonly hierarchyCount: Int32;
-}
-export const Transform = intrinsic<Transform>("Transform");
 
 export interface Behaviour extends Component {
   enabled: Boolean;
@@ -62,23 +39,23 @@ export interface Renderer extends Component {
   readonly isPartOfStaticBatch: Boolean;
   readonly worldToLocalMatrix: Matrix4x4;
   readonly localToWorldMatrix: Matrix4x4;
-//lightProbeProxyVolumeOverride: GameObject;
-//probeAnchor: Transform;
+  lightProbeProxyVolumeOverride: Ptr<GameObject>;
+  probeAnchor: Ptr<Transform>;
   lightmapIndex: Int32;
   realtimeLightmapIndex: Int32;
   lightmapScaleOffset: Vector4;
   realtimeLightmapScaleOffset: Vector4;
 //materials: Material[];
-//material: Material;
-//sharedMaterial: Material;
+  material: Ptr<Material>;
+  sharedMaterial: Ptr<Material>;
 //sharedMaterials: Material[];
 //readonly LODGroup: LODGroup;
 }
 export const Renderer = intrinsic<Renderer>("Renderer");
 
 export interface MeshRenderer extends Renderer {
-//additionalVertexStreams: Mesh;
-//enlightenVertexStream: Mesh;
+  additionalVertexStreams: Ptr<Mesh>;
+  enlightenVertexStream: Ptr<Mesh>;
   readonly subMeshStartIndex: Int32;
   scaleInLightmap: Single;
 //receiveGI: ReceiveGI;
@@ -88,8 +65,8 @@ export interface MeshRenderer extends Renderer {
 export const MeshRenderer = intrinsic<MeshRenderer>("MeshRenderer");
 
 export interface MeshFilter extends Component {
-//sharedMesh: Mesh;
-//mesh: Mesh;
+  sharedMesh: Ptr<Mesh>;
+  mesh: Ptr<Mesh>;
 }
 export const MeshFilter = intrinsic<MeshFilter>("MeshFilter");
 
@@ -141,7 +118,7 @@ export interface Material extends ObjectBase {
   enableInstancing: Boolean;
   readonly passCount: Int32;
 //shaderKeywords: String[];
-//parent: Material;
+  parent: Ptr<Material>;
   readonly isVariant: Boolean;
 }
 export const Material = intrinsic<Material>("Material");
