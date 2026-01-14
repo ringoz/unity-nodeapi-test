@@ -1,4 +1,4 @@
-import type { Behaviour, Boolean, Bounds, Color, Component, GameObject, Int16, Int32, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4 } from './Packages/net.ringoz.unity.nodeapi/react';
+import type { Behaviour, BindableElement, Boolean, Bounds, Char, Color, Component, GameObject, Int16, Int32, Int64, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, TextElement, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4, VisualElement } from './Packages/net.ringoz.unity.nodeapi/react';
 import { intrinsic } from './Packages/net.ringoz.unity.nodeapi/react';
 
 export * from './Packages/net.ringoz.unity.nodeapi';
@@ -261,5 +261,357 @@ export interface Material extends ObjectBase {
   parent: Ptr<Material>;
   readonly isVariant: Boolean;
 }
+export const Material = intrinsic<Material>("Material");
+
+export interface Button extends TextElement {
+//clickable: Clickable;
+//iconImage: Background;
+}
+export const Button = intrinsic<Button>("Button");
+
+export interface ToggleButtonGroup extends BindableElement {
+//value: ToggleButtonGroupState;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+  isMultipleSelection: Boolean;
+  allowEmptySelection: Boolean;
+}
+export const ToggleButtonGroup = intrinsic<ToggleButtonGroup>("ToggleButtonGroup");
+
+export type ScaleMode = 'StretchToFill' | 'ScaleAndCrop' | 'ScaleToFit';
+export interface Image extends VisualElement {
+//image: Texture;
+//sprite: Sprite;
+//vectorImage: VectorImage;
+  sourceRect: Rect;
+  uv: Rect;
+  scaleMode: ScaleMode;
+  tintColor: Color;
+}
+export const Image = intrinsic<Image>("Image");
+
+export interface Label extends TextElement {
+}
+export const Label = intrinsic<Label>("Label");
+
+export interface RepeatButton extends TextElement {
+}
+export const RepeatButton = intrinsic<RepeatButton>("RepeatButton");
+
+export type ScrollerVisibility = 'Auto' | 'AlwaysVisible' | 'Hidden';
+export type TouchScrollBehavior = 'Unrestricted' | 'Elastic' | 'Clamped';
+export type NestedInteractionKind = 'Default' | 'StopScrolling' | 'ForwardScrolling';
+export type ScrollViewMode = 'Vertical' | 'Horizontal' | 'VerticalAndHorizontal';
+export interface ScrollView extends VisualElement {
+  horizontalScrollerVisibility: ScrollerVisibility;
+  verticalScrollerVisibility: ScrollerVisibility;
+  elasticAnimationIntervalMs: Int64;
+  scrollOffset: Vector2;
+  horizontalPageSize: Single;
+  verticalPageSize: Single;
+  mouseWheelScrollSize: Single;
+  scrollDecelerationRate: Single;
+  elasticity: Single;
+  touchScrollBehavior: TouchScrollBehavior;
+  nestedInteractionKind: NestedInteractionKind;
+  readonly contentViewport: Ptr<VisualElement>;
+  readonly horizontalScroller: Ptr<Scroller>;
+  readonly verticalScroller: Ptr<Scroller>;
+  mode: ScrollViewMode;
+}
+export const ScrollView = intrinsic<ScrollView>("ScrollView");
+
+export type SliderDirection = 'Horizontal' | 'Vertical';
+export interface Scroller extends VisualElement {
+  readonly slider: Ptr<Slider>;
+  readonly lowButton: Ptr<RepeatButton>;
+  readonly highButton: Ptr<RepeatButton>;
+  value: Single;
+  lowValue: Single;
+  highValue: Single;
+  direction: SliderDirection;
+}
+export const Scroller = intrinsic<Scroller>("Scroller");
+
+export interface Slider extends BindableElement {
+  value: Single;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+  lowValue: Single;
+  highValue: Single;
+  readonly range: Single;
+  pageSize: Single;
+  showInputField: Boolean;
+  fill: Boolean;
+  direction: SliderDirection;
+  inverted: Boolean;
+}
+export const Slider = intrinsic<Slider>("Slider");
+
+export interface GroupBox extends BindableElement {
+  text: String;
+}
+export const GroupBox = intrinsic<GroupBox>("GroupBox");
+
+export interface RadioButton extends BindableElement {
+  value: Boolean;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+  toggleOnLabelClick: Boolean;
+  text: String;
+}
+export const RadioButton = intrinsic<RadioButton>("RadioButton");
+
+export interface RadioButtonGroup extends BindableElement {
+  value: Int32;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+//choices: IEnumerable;
+}
+export const RadioButtonGroup = intrinsic<RadioButtonGroup>("RadioButtonGroup");
+
+export interface Toggle extends BindableElement {
+  value: Boolean;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+  toggleOnLabelClick: Boolean;
+  text: String;
+}
+export const Toggle = intrinsic<Toggle>("Toggle");
+
+export type TouchScreenKeyboardType = 'Default' | 'ASCIICapable' | 'NumbersAndPunctuation' | 'URL' | 'NumberPad' | 'PhonePad' | 'NamePhonePad' | 'EmailAddress' | 'NintendoNetworkAccount' | 'Social' | 'Search' | 'DecimalPad' | 'OneTimeCode';
+export interface TextField extends BindableElement {
+  value: String;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+//readonly textSelection: ITextSelection;
+//readonly textEdition: ITextEdition;
+  isReadOnly: Boolean;
+  isPasswordField: Boolean;
+  autoCorrection: Boolean;
+  hideMobileInput: Boolean;
+  keyboardType: TouchScreenKeyboardType;
+//readonly touchScreenKeyboard: TouchScreenKeyboard;
+  maxLength: Int32;
+  isDelayed: Boolean;
+  maskChar: Char;
+  cursorIndex: Int32;
+  readonly cursorPosition: Vector2;
+  selectIndex: Int32;
+  selectAllOnFocus: Boolean;
+  selectAllOnMouseUp: Boolean;
+  doubleClickSelectsWord: Boolean;
+  tripleClickSelectsLine: Boolean;
+  text: String;
+  emojiFallbackSupport: Boolean;
+  verticalScrollerVisibility: ScrollerVisibility;
+  multiline: Boolean;
+}
+export const TextField = intrinsic<TextField>("TextField");
+
+export interface Box extends VisualElement {
+}
+export const Box = intrinsic<Box>("Box");
+
+export interface PopupField extends BindableElement {
+  value: String;
+  readonly labelElement: Ptr<Label>;
+  label: String;
+  showMixedValue: Boolean;
+//choices: List;
+  readonly text: String;
+//formatSelectedValueCallback: Func;
+//formatListItemCallback: Func;
+  index: Int32;
+}
+export const PopupField = intrinsic<PopupField>("PopupField");
+
+export interface DropdownField extends PopupField {
+}
+export const DropdownField = intrinsic<DropdownField>("DropdownField");
+
+export type HelpBoxMessageType = 'None' | 'Info' | 'Warning' | 'Error';
+export interface HelpBox extends VisualElement {
+  text: String;
+  messageType: HelpBoxMessageType;
+}
+export const HelpBox = intrinsic<HelpBox>("HelpBox");
+
+export interface PopupWindow extends TextElement {
+}
+export const PopupWindow = intrinsic<PopupWindow>("PopupWindow");
+
+export interface ProgressBar extends BindableElement {
+  title: String;
+  lowValue: Single;
+  highValue: Single;
+  value: Single;
+}
+export const ProgressBar = intrinsic<ProgressBar>("ProgressBar");
+
+export type SelectionType = 'None' | 'Single' | 'Multiple';
+export type AlternatingRowBackground = 'None' | 'ContentOnly' | 'All';
+export type CollectionVirtualizationMethod = 'FixedHeight' | 'DynamicHeight';
+export type BindingSourceSelectionMode = 'Manual' | 'AutoAssign';
+export type ListViewReorderMode = 'Simple' | 'Animated';
+export interface ListView extends BindableElement {
+//itemsSource: IList;
+  selectionType: SelectionType;
+  readonly selectedItem: Object;
+//readonly selectedItems: IEnumerable;
+  selectedIndex: Int32;
+//readonly selectedIndices: IEnumerable;
+//readonly selectedIds: IEnumerable;
+//readonly viewController: BaseListViewController;
+  showBorder: Boolean;
+  reorderable: Boolean;
+  horizontalScrollingEnabled: Boolean;
+  showAlternatingRowBackgrounds: AlternatingRowBackground;
+  virtualizationMethod: CollectionVirtualizationMethod;
+  fixedItemHeight: Single;
+  showBoundCollectionSize: Boolean;
+  showFoldoutHeader: Boolean;
+  headerTitle: String;
+//makeHeader: Func;
+//makeFooter: Func;
+  showAddRemoveFooter: Boolean;
+  bindingSourceSelectionMode: BindingSourceSelectionMode;
+  reorderMode: ListViewReorderMode;
+//makeNoneElement: Func;
+  allowAdd: Boolean;
+//overridingAddButtonBehavior: Action;
+//onAdd: Action;
+  allowRemove: Boolean;
+//onRemove: Action;
+//makeItem: Func;
+//itemTemplate: VisualTreeAsset;
+//bindItem: Action;
+//unbindItem: Action;
+//destroyItem: Action;
+}
+export const ListView = intrinsic<ListView>("ListView");
+
+export type TwoPaneSplitViewOrientation = 'Horizontal' | 'Vertical';
+export interface TwoPaneSplitView extends VisualElement {
+  readonly fixedPane: Ptr<VisualElement>;
+  readonly flexedPane: Ptr<VisualElement>;
+  fixedPaneIndex: Int32;
+  fixedPaneInitialDimension: Single;
+  orientation: TwoPaneSplitViewOrientation;
+}
+export const TwoPaneSplitView = intrinsic<TwoPaneSplitView>("TwoPaneSplitView");
+
+export interface TreeView extends BindableElement {
+//readonly itemsSource: IList;
+  selectionType: SelectionType;
+  readonly selectedItem: Object;
+//readonly selectedItems: IEnumerable;
+  selectedIndex: Int32;
+//readonly selectedIndices: IEnumerable;
+//readonly selectedIds: IEnumerable;
+//readonly viewController: TreeViewController;
+  showBorder: Boolean;
+  reorderable: Boolean;
+  horizontalScrollingEnabled: Boolean;
+  showAlternatingRowBackgrounds: AlternatingRowBackground;
+  virtualizationMethod: CollectionVirtualizationMethod;
+  fixedItemHeight: Single;
+  autoExpand: Boolean;
+//makeItem: Func;
+//itemTemplate: VisualTreeAsset;
+//bindItem: Action;
+//unbindItem: Action;
+//destroyItem: Action;
+}
+export const TreeView = intrinsic<TreeView>("TreeView");
+
+export interface Foldout extends BindableElement {
+  toggleOnLabelClick: Boolean;
+  text: String;
+  value: Boolean;
+}
+export const Foldout = intrinsic<Foldout>("Foldout");
+
+export type ColumnSortingMode = 'None' | 'Default' | 'Custom';
+export interface MultiColumnListView extends BindableElement {
+//itemsSource: IList;
+  selectionType: SelectionType;
+  readonly selectedItem: Object;
+//readonly selectedItems: IEnumerable;
+  selectedIndex: Int32;
+//readonly selectedIndices: IEnumerable;
+//readonly selectedIds: IEnumerable;
+//readonly viewController: MultiColumnListViewController;
+  showBorder: Boolean;
+  reorderable: Boolean;
+  horizontalScrollingEnabled: Boolean;
+  showAlternatingRowBackgrounds: AlternatingRowBackground;
+  virtualizationMethod: CollectionVirtualizationMethod;
+  fixedItemHeight: Single;
+  showBoundCollectionSize: Boolean;
+  showFoldoutHeader: Boolean;
+  headerTitle: String;
+//makeHeader: Func;
+//makeFooter: Func;
+  showAddRemoveFooter: Boolean;
+  bindingSourceSelectionMode: BindingSourceSelectionMode;
+  reorderMode: ListViewReorderMode;
+//makeNoneElement: Func;
+  allowAdd: Boolean;
+//overridingAddButtonBehavior: Action;
+//onAdd: Action;
+  allowRemove: Boolean;
+//onRemove: Action;
+//readonly sortedColumns: IEnumerable;
+//readonly columns: Columns;
+//readonly sortColumnDescriptions: SortColumnDescriptions;
+  sortingMode: ColumnSortingMode;
+}
+export const MultiColumnListView = intrinsic<MultiColumnListView>("MultiColumnListView");
+
+export interface MultiColumnTreeView extends BindableElement {
+//readonly itemsSource: IList;
+  selectionType: SelectionType;
+  readonly selectedItem: Object;
+//readonly selectedItems: IEnumerable;
+  selectedIndex: Int32;
+//readonly selectedIndices: IEnumerable;
+//readonly selectedIds: IEnumerable;
+//readonly viewController: MultiColumnTreeViewController;
+  showBorder: Boolean;
+  reorderable: Boolean;
+  horizontalScrollingEnabled: Boolean;
+  showAlternatingRowBackgrounds: AlternatingRowBackground;
+  virtualizationMethod: CollectionVirtualizationMethod;
+  fixedItemHeight: Single;
+  autoExpand: Boolean;
+//readonly sortedColumns: IEnumerable;
+//readonly columns: Columns;
+//readonly sortColumnDescriptions: SortColumnDescriptions;
+  sortingMode: ColumnSortingMode;
+}
+export const MultiColumnTreeView = intrinsic<MultiColumnTreeView>("MultiColumnTreeView");
+
+export interface Tab extends VisualElement {
+  readonly tabHeader: Ptr<VisualElement>;
+  label: String;
+//iconImage: Background;
+  closeable: Boolean;
+}
+export const Tab = intrinsic<Tab>("Tab");
+
+export interface TabView extends VisualElement {
+  readonly contentViewport: Ptr<VisualElement>;
+  activeTab: Ptr<Tab>;
+  selectedTabIndex: Int32;
+  reorderable: Boolean;
+}
+export const TabView = intrinsic<TabView>("TabView");
 
 //#endregion generated
