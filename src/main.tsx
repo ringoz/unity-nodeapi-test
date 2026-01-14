@@ -1,6 +1,6 @@
-import { createRoot, Element } from 'unode-module';
+import { createRoot, Node } from 'unode-module';
 import App from './App.tsx';
 
-createRoot(Element.search("React Root")).render(
+createRoot(Node.search("React Root")).render(
   <App />
 );
