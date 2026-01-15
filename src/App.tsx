@@ -1,5 +1,5 @@
-import { asset, Capsule, Cube, GameObject, Cylinder, Sphere, Transform } from 'unode-module';
 import { Suspense } from 'react';
+import { asset, Button, Capsule, Cube, Cylinder, GameObject, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
 
@@ -21,6 +21,10 @@ function App() {
           </Cube>
         </GameObject>
       </Sphere>
+      <VisualElement>
+        <TextElement text="Hello World!" />
+        <Button text="Click me" />
+      </VisualElement>
     </>
   )
 }
