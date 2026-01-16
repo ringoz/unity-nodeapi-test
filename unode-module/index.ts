@@ -65,8 +65,8 @@ export interface Camera extends Behaviour {
   readonly pixelHeight: Int32;
   readonly scaledPixelWidth: Int32;
   readonly scaledPixelHeight: Int32;
-//targetTexture: RenderTexture;
-//readonly activeTexture: RenderTexture;
+  //targetTexture: RenderTexture;
+  //readonly activeTexture: RenderTexture;
   targetDisplay: Int32;
   readonly cameraToWorldMatrix: Matrix4x4;
   worldToCameraMatrix: Matrix4x4;
@@ -74,7 +74,7 @@ export interface Camera extends Behaviour {
   nonJitteredProjectionMatrix: Matrix4x4;
   useJitteredProjectionMatrixForTransparentRendering: Boolean;
   readonly previousViewProjectionMatrix: Matrix4x4;
-//scene: Scene;
+  //scene: Scene;
   readonly stereoEnabled: Boolean;
   stereoSeparation: Single;
   stereoConvergence: Single;
@@ -112,7 +112,7 @@ export interface Animator extends Behaviour {
   bodyRotation: Quaternion;
   stabilizeFeet: Boolean;
   readonly layerCount: Int32;
-//readonly parameters: AnimatorControllerParameter[];
+  //readonly parameters: AnimatorControllerParameter[];
   readonly parameterCount: Int32;
   feetPivotActive: Single;
   readonly pivotWeight: Single;
@@ -127,10 +127,10 @@ export interface Animator extends Behaviour {
   recorderStartTime: Single;
   recorderStopTime: Single;
   readonly recorderMode: AnimatorRecorderMode;
-//runtimeAnimatorController: RuntimeAnimatorController;
+  //runtimeAnimatorController: RuntimeAnimatorController;
   readonly hasBoundPlayables: Boolean;
-//avatar: Avatar;
-//readonly playableGraph: PlayableGraph;
+  //avatar: Avatar;
+  //readonly playableGraph: PlayableGraph;
   layersAffectMassCenter: Boolean;
   readonly leftFeetBottomHeight: Single;
   readonly rightFeetBottomHeight: Single;
@@ -180,11 +180,11 @@ export interface Renderer extends Component {
   realtimeLightmapIndex: Int32;
   lightmapScaleOffset: Vector4;
   realtimeLightmapScaleOffset: Vector4;
-//materials: Material[];
+  //materials: Material[];
   material: Ptr<Material>;
   sharedMaterial: Ptr<Material>;
-//sharedMaterials: Material[];
-//readonly LODGroup: LODGroup;
+  //sharedMaterials: Material[];
+  //readonly LODGroup: LODGroup;
 }
 export const Renderer = intrinsic<Renderer>("Renderer");
 
@@ -216,43 +216,43 @@ export interface Mesh extends ObjectBase {
   indexBufferTarget: Target;
   readonly blendShapeCount: Int32;
   readonly bindposeCount: Int32;
-//bindposes: Matrix4x4[];
+  //bindposes: Matrix4x4[];
   readonly isReadable: Boolean;
   readonly vertexCount: Int32;
   subMeshCount: Int32;
   bounds: Bounds;
-//vertices: Vector3[];
-//normals: Vector3[];
-//tangents: Vector4[];
-//uv: Vector2[];
-//uv2: Vector2[];
-//uv3: Vector2[];
-//uv4: Vector2[];
-//uv5: Vector2[];
-//uv6: Vector2[];
-//uv7: Vector2[];
-//uv8: Vector2[];
-//colors: Color[];
-//colors32: Color32[];
+  //vertices: Vector3[];
+  //normals: Vector3[];
+  //tangents: Vector4[];
+  //uv: Vector2[];
+  //uv2: Vector2[];
+  //uv3: Vector2[];
+  //uv4: Vector2[];
+  //uv5: Vector2[];
+  //uv6: Vector2[];
+  //uv7: Vector2[];
+  //uv8: Vector2[];
+  //colors: Color[];
+  //colors32: Color32[];
   lodCount: Int32;
-//lodSelectionCurve: LodSelectionCurve;
+  //lodSelectionCurve: LodSelectionCurve;
   readonly vertexAttributeCount: Int32;
   triangles: Int32[];
-//boneWeights: BoneWeight[];
+  //boneWeights: BoneWeight[];
   readonly skinWeightBufferLayout: SkinWeights;
 }
 export const Mesh = intrinsic<Mesh>("Mesh");
 
 export type MaterialGlobalIlluminationFlags = 'None' | 'RealtimeEmissive' | 'BakedEmissive' | 'AnyEmissive' | 'EmissiveIsBlack';
 export interface Material extends ObjectBase {
-//shader: Shader;
+  //shader: Shader;
   color: Color;
-//mainTexture: Texture;
+  //mainTexture: Texture;
   mainTextureOffset: Vector2;
   mainTextureScale: Vector2;
   renderQueue: Int32;
   readonly rawRenderQueue: Int32;
-//enabledKeywords: LocalKeyword[];
+  //enabledKeywords: LocalKeyword[];
   globalIlluminationFlags: MaterialGlobalIlluminationFlags[];
   doubleSidedGI: Boolean;
   enableInstancing: Boolean;
@@ -264,13 +264,13 @@ export interface Material extends ObjectBase {
 export const Material = intrinsic<Material>("Material");
 
 export interface Button extends TextElement {
-//clickable: Clickable;
-//iconImage: Background;
+  //clickable: Clickable;
+  //iconImage: Background;
 }
 export const Button = intrinsic<Button>("Button");
 
 export interface ToggleButtonGroup extends BindableElement {
-//value: ToggleButtonGroupState;
+  //value: ToggleButtonGroupState;
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
@@ -281,9 +281,9 @@ export const ToggleButtonGroup = intrinsic<ToggleButtonGroup>("ToggleButtonGroup
 
 export type ScaleMode = 'StretchToFill' | 'ScaleAndCrop' | 'ScaleToFit';
 export interface Image extends VisualElement {
-//image: Texture;
-//sprite: Sprite;
-//vectorImage: VectorImage;
+  //image: Texture;
+  //sprite: Sprite;
+  //vectorImage: VectorImage;
   sourceRect: Rect;
   uv: Rect;
   scaleMode: ScaleMode;
@@ -370,7 +370,7 @@ export interface RadioButtonGroup extends BindableElement {
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-//choices: IEnumerable;
+  //choices: IEnumerable;
 }
 export const RadioButtonGroup = intrinsic<RadioButtonGroup>("RadioButtonGroup");
 
@@ -390,14 +390,14 @@ export interface TextField extends BindableElement {
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-//readonly textSelection: ITextSelection;
-//readonly textEdition: ITextEdition;
+  //readonly textSelection: ITextSelection;
+  //readonly textEdition: ITextEdition;
   isReadOnly: Boolean;
   isPasswordField: Boolean;
   autoCorrection: Boolean;
   hideMobileInput: Boolean;
   keyboardType: TouchScreenKeyboardType;
-//readonly touchScreenKeyboard: TouchScreenKeyboard;
+  //readonly touchScreenKeyboard: TouchScreenKeyboard;
   maxLength: Int32;
   isDelayed: Boolean;
   maskChar: Char;
@@ -424,10 +424,10 @@ export interface PopupField extends BindableElement {
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-//choices: List;
+  //choices: List;
   readonly text: String;
-//formatSelectedValueCallback: Func;
-//formatListItemCallback: Func;
+  //formatSelectedValueCallback: Func;
+  //formatListItemCallback: Func;
   index: Int32;
 }
 export const PopupField = intrinsic<PopupField>("PopupField");
@@ -461,14 +461,14 @@ export type CollectionVirtualizationMethod = 'FixedHeight' | 'DynamicHeight';
 export type BindingSourceSelectionMode = 'Manual' | 'AutoAssign';
 export type ListViewReorderMode = 'Simple' | 'Animated';
 export interface ListView extends BindableElement {
-//itemsSource: IList;
+  //itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-//readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable;
   selectedIndex: Int32;
-//readonly selectedIndices: IEnumerable;
-//readonly selectedIds: IEnumerable;
-//readonly viewController: BaseListViewController;
+  //readonly selectedIndices: IEnumerable;
+  //readonly selectedIds: IEnumerable;
+  //readonly viewController: BaseListViewController;
   showBorder: Boolean;
   reorderable: Boolean;
   horizontalScrollingEnabled: Boolean;
@@ -478,22 +478,22 @@ export interface ListView extends BindableElement {
   showBoundCollectionSize: Boolean;
   showFoldoutHeader: Boolean;
   headerTitle: String;
-//makeHeader: Func;
-//makeFooter: Func;
+  //makeHeader: Func;
+  //makeFooter: Func;
   showAddRemoveFooter: Boolean;
   bindingSourceSelectionMode: BindingSourceSelectionMode;
   reorderMode: ListViewReorderMode;
-//makeNoneElement: Func;
+  //makeNoneElement: Func;
   allowAdd: Boolean;
-//overridingAddButtonBehavior: Action;
-//onAdd: Action;
+  //overridingAddButtonBehavior: Action;
+  //onAdd: Action;
   allowRemove: Boolean;
-//onRemove: Action;
-//makeItem: Func;
-//itemTemplate: VisualTreeAsset;
-//bindItem: Action;
-//unbindItem: Action;
-//destroyItem: Action;
+  //onRemove: Action;
+  //makeItem: Func;
+  //itemTemplate: VisualTreeAsset;
+  //bindItem: Action;
+  //unbindItem: Action;
+  //destroyItem: Action;
 }
 export const ListView = intrinsic<ListView>("ListView");
 
@@ -508,14 +508,14 @@ export interface TwoPaneSplitView extends VisualElement {
 export const TwoPaneSplitView = intrinsic<TwoPaneSplitView>("TwoPaneSplitView");
 
 export interface TreeView extends BindableElement {
-//readonly itemsSource: IList;
+  //readonly itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-//readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable;
   selectedIndex: Int32;
-//readonly selectedIndices: IEnumerable;
-//readonly selectedIds: IEnumerable;
-//readonly viewController: TreeViewController;
+  //readonly selectedIndices: IEnumerable;
+  //readonly selectedIds: IEnumerable;
+  //readonly viewController: TreeViewController;
   showBorder: Boolean;
   reorderable: Boolean;
   horizontalScrollingEnabled: Boolean;
@@ -523,11 +523,11 @@ export interface TreeView extends BindableElement {
   virtualizationMethod: CollectionVirtualizationMethod;
   fixedItemHeight: Single;
   autoExpand: Boolean;
-//makeItem: Func;
-//itemTemplate: VisualTreeAsset;
-//bindItem: Action;
-//unbindItem: Action;
-//destroyItem: Action;
+  //makeItem: Func;
+  //itemTemplate: VisualTreeAsset;
+  //bindItem: Action;
+  //unbindItem: Action;
+  //destroyItem: Action;
 }
 export const TreeView = intrinsic<TreeView>("TreeView");
 
@@ -540,14 +540,14 @@ export const Foldout = intrinsic<Foldout>("Foldout");
 
 export type ColumnSortingMode = 'None' | 'Default' | 'Custom';
 export interface MultiColumnListView extends BindableElement {
-//itemsSource: IList;
+  //itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-//readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable;
   selectedIndex: Int32;
-//readonly selectedIndices: IEnumerable;
-//readonly selectedIds: IEnumerable;
-//readonly viewController: MultiColumnListViewController;
+  //readonly selectedIndices: IEnumerable;
+  //readonly selectedIds: IEnumerable;
+  //readonly viewController: MultiColumnListViewController;
   showBorder: Boolean;
   reorderable: Boolean;
   horizontalScrollingEnabled: Boolean;
@@ -557,33 +557,33 @@ export interface MultiColumnListView extends BindableElement {
   showBoundCollectionSize: Boolean;
   showFoldoutHeader: Boolean;
   headerTitle: String;
-//makeHeader: Func;
-//makeFooter: Func;
+  //makeHeader: Func;
+  //makeFooter: Func;
   showAddRemoveFooter: Boolean;
   bindingSourceSelectionMode: BindingSourceSelectionMode;
   reorderMode: ListViewReorderMode;
-//makeNoneElement: Func;
+  //makeNoneElement: Func;
   allowAdd: Boolean;
-//overridingAddButtonBehavior: Action;
-//onAdd: Action;
+  //overridingAddButtonBehavior: Action;
+  //onAdd: Action;
   allowRemove: Boolean;
-//onRemove: Action;
-//readonly sortedColumns: IEnumerable;
-//readonly columns: Columns;
-//readonly sortColumnDescriptions: SortColumnDescriptions;
+  //onRemove: Action;
+  //readonly sortedColumns: IEnumerable;
+  //readonly columns: Columns;
+  //readonly sortColumnDescriptions: SortColumnDescriptions;
   sortingMode: ColumnSortingMode;
 }
 export const MultiColumnListView = intrinsic<MultiColumnListView>("MultiColumnListView");
 
 export interface MultiColumnTreeView extends BindableElement {
-//readonly itemsSource: IList;
+  //readonly itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-//readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable;
   selectedIndex: Int32;
-//readonly selectedIndices: IEnumerable;
-//readonly selectedIds: IEnumerable;
-//readonly viewController: MultiColumnTreeViewController;
+  //readonly selectedIndices: IEnumerable;
+  //readonly selectedIds: IEnumerable;
+  //readonly viewController: MultiColumnTreeViewController;
   showBorder: Boolean;
   reorderable: Boolean;
   horizontalScrollingEnabled: Boolean;
@@ -591,9 +591,9 @@ export interface MultiColumnTreeView extends BindableElement {
   virtualizationMethod: CollectionVirtualizationMethod;
   fixedItemHeight: Single;
   autoExpand: Boolean;
-//readonly sortedColumns: IEnumerable;
-//readonly columns: Columns;
-//readonly sortColumnDescriptions: SortColumnDescriptions;
+  //readonly sortedColumns: IEnumerable;
+  //readonly columns: Columns;
+  //readonly sortColumnDescriptions: SortColumnDescriptions;
   sortingMode: ColumnSortingMode;
 }
 export const MultiColumnTreeView = intrinsic<MultiColumnTreeView>("MultiColumnTreeView");
@@ -601,7 +601,7 @@ export const MultiColumnTreeView = intrinsic<MultiColumnTreeView>("MultiColumnTr
 export interface Tab extends VisualElement {
   readonly tabHeader: Ptr<VisualElement>;
   label: String;
-//iconImage: Background;
+  //iconImage: Background;
   closeable: Boolean;
 }
 export const Tab = intrinsic<Tab>("Tab");
