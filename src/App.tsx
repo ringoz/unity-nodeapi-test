@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
-import { asset, Button, Capsule, Cube, Cylinder, GameObject, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
+import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
+const MyButton = intrinsic<VisualElement>('MyButton');
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <VisualElement>
         <TextElement text="Hello World!" />
         <Button text="Click me" />
+        <MyButton />
       </VisualElement>
     </>
   )
