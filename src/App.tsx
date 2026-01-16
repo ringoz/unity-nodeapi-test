@@ -1,8 +1,9 @@
 import { Suspense } from 'react';
-import { asset, AttributeOverrides, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
+import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
 const MyButton = intrinsic<VisualElement>('MyButton');
+const PART_Button = intrinsic<Button>('#PART_Button');
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <TextElement text="Hello World!" />
         <Button text="Click me" />
         <MyButton>
-          <AttributeOverrides elementName="PART_Button" text="My Button" />
+          <PART_Button text="My Button" />
         </MyButton>
       </VisualElement>
     </>
