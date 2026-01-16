@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="VisualElement">
-        <ui:Button text="Button" style="-unity-text-align: lower-center; width: 100%; height: 100%;">
+        <ui:Button name="PART_Button" text="Button" style="-unity-text-align: lower-center; width: 100%; height: 100%;">
             <ui:Image source="project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-6527069497977903076&amp;guid=81bceec5588dbb8459e48595c5fc9096&amp;type=3#console.warnicon@2x"/>
         </ui:Button>
     </ui:VisualElement>
