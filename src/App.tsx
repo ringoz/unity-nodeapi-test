@@ -1,9 +1,10 @@
-import { Suspense } from 'react';
+import { Activity, Suspense } from 'react';
 import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
-const MyButton = intrinsic<VisualElement>('MyButton');
-const PART_Button = intrinsic<Button>('#PART_Button');
+const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
+  PART_Button: intrinsic<Button>('#PART_Button')
+});
 
 function App() {
   return (
@@ -26,9 +27,11 @@ function App() {
       <VisualElement>
         <TextElement text="Hello World!" />
         <Button text="Click me" />
-        <MyButton>
-          <PART_Button text="My Button" />
-        </MyButton>
+        <Activity mode='visible'>
+          <MyButton>
+            <MyButton.PART_Button text="My Button" enabledSelf={false} />
+          </MyButton>
+        </Activity>
       </VisualElement>
     </>
   )
