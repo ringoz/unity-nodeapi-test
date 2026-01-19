@@ -28,8 +28,8 @@ function App() {
         <TextElement text="Hello World!" />
         <Button text="Click me" />
         <Activity mode='visible'>
-          <MyButton>
-            <MyButton.PART_Button text="My Button" enabledSelf={false} />
+          <MyButton style-width-value-value={100}>
+            <MyButton.PART_Button text="My Button" enabledSelf={false} style-color-value={[0, 1, 0, 1]} />
           </MyButton>
         </Activity>
       </VisualElement>
