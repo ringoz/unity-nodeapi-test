@@ -9,9 +9,17 @@ const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
 function App() {
   return (
     <>
-      <Suspense fallback={<Capsule />}>
-        <CubeSpin hideFlags={['None', 'NotEditable']} />
-      </Suspense>
+      <Activity mode='visible'>
+        <Suspense fallback={<Capsule />}>
+          <CubeSpin hideFlags={['None', 'NotEditable']}
+            onAwake={() => console.log('onAwake')}
+            onStart={() => console.log('onStart')}
+            onEnable={() => console.log('onEnable')}
+            onDisable={() => console.log('onDisable')}
+            onDestroy={() => console.log('onDestroy')}
+            onMouseDown={() => console.log('onMouseDown')} />
+        </Suspense>
+      </Activity>
       <Sphere name="sphere1">
         <Transform localScale={[2, 2, 2]} localPosition={[1, 2, 3]} />
         <GameObject>
