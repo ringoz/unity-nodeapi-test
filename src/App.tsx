@@ -33,8 +33,8 @@ function App() {
         </GameObject>
       </Sphere>
       <VisualElement>
-        <TextElement text="Hello World!" />
-        <Button text="Click me" />
+        <TextElement text="<color='yellow'>Hello World</color>!" />
+        <Button>Click me</Button>
         <Activity mode='visible'>
           <MyButton style-width-value-value={100}>
             <MyButton.PART_Button text="My Button" enabledSelf={false} style-color-value={[0, 1, 0, 1]} />
