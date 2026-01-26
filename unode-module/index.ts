@@ -370,7 +370,7 @@ export interface RadioButtonGroup extends BindableElement {
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-  //choices: IEnumerable;
+  //choices: IEnumerable<String>;
 }
 export const RadioButtonGroup = intrinsic<RadioButtonGroup>("RadioButtonGroup");
 
@@ -419,20 +419,20 @@ export interface Box extends VisualElement {
 }
 export const Box = intrinsic<Box>("Box");
 
-export interface PopupField extends BindableElement {
+export interface PopupField<String> extends BindableElement {
   value: String;
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-  //choices: List;
+  //choices: List<String>;
   readonly text: String;
-  //formatSelectedValueCallback: Func;
-  //formatListItemCallback: Func;
+  //formatSelectedValueCallback: Func<String, String>;
+  //formatListItemCallback: Func<String, String>;
   index: Int32;
 }
-export const PopupField = intrinsic<PopupField>("PopupField");
+export const PopupField = intrinsic<PopupField<String>>("PopupField`1");
 
-export interface DropdownField extends PopupField {
+export interface DropdownField extends PopupField<String> {
 }
 export const DropdownField = intrinsic<DropdownField>("DropdownField");
 
@@ -464,10 +464,10 @@ export interface ListView extends BindableElement {
   //itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable;
-  //readonly selectedIds: IEnumerable;
+  //readonly selectedIndices: IEnumerable<Int32>;
+  //readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: BaseListViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -478,22 +478,22 @@ export interface ListView extends BindableElement {
   showBoundCollectionSize: Boolean;
   showFoldoutHeader: Boolean;
   headerTitle: String;
-  //makeHeader: Func;
-  //makeFooter: Func;
+  //makeHeader: Func<VisualElement>;
+  //makeFooter: Func<VisualElement>;
   showAddRemoveFooter: Boolean;
   bindingSourceSelectionMode: BindingSourceSelectionMode;
   reorderMode: ListViewReorderMode;
-  //makeNoneElement: Func;
+  //makeNoneElement: Func<VisualElement>;
   allowAdd: Boolean;
-  //overridingAddButtonBehavior: Action;
-  //onAdd: Action;
+  //overridingAddButtonBehavior: Action<BaseListView, Button>;
+  //onAdd: Action<BaseListView>;
   allowRemove: Boolean;
-  //onRemove: Action;
-  //makeItem: Func;
+  //onRemove: Action<BaseListView>;
+  //makeItem: Func<VisualElement>;
   //itemTemplate: VisualTreeAsset;
-  //bindItem: Action;
-  //unbindItem: Action;
-  //destroyItem: Action;
+  //bindItem: Action<VisualElement, Int32>;
+  //unbindItem: Action<VisualElement, Int32>;
+  //destroyItem: Action<VisualElement>;
 }
 export const ListView = intrinsic<ListView>("ListView");
 
@@ -511,10 +511,10 @@ export interface TreeView extends BindableElement {
   //readonly itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable;
-  //readonly selectedIds: IEnumerable;
+  //readonly selectedIndices: IEnumerable<Int32>;
+  //readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: TreeViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -523,11 +523,11 @@ export interface TreeView extends BindableElement {
   virtualizationMethod: CollectionVirtualizationMethod;
   fixedItemHeight: Single;
   autoExpand: Boolean;
-  //makeItem: Func;
+  //makeItem: Func<VisualElement>;
   //itemTemplate: VisualTreeAsset;
-  //bindItem: Action;
-  //unbindItem: Action;
-  //destroyItem: Action;
+  //bindItem: Action<VisualElement, Int32>;
+  //unbindItem: Action<VisualElement, Int32>;
+  //destroyItem: Action<VisualElement>;
 }
 export const TreeView = intrinsic<TreeView>("TreeView");
 
@@ -543,10 +543,10 @@ export interface MultiColumnListView extends BindableElement {
   //itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable;
-  //readonly selectedIds: IEnumerable;
+  //readonly selectedIndices: IEnumerable<Int32>;
+  //readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: MultiColumnListViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -557,18 +557,18 @@ export interface MultiColumnListView extends BindableElement {
   showBoundCollectionSize: Boolean;
   showFoldoutHeader: Boolean;
   headerTitle: String;
-  //makeHeader: Func;
-  //makeFooter: Func;
+  //makeHeader: Func<VisualElement>;
+  //makeFooter: Func<VisualElement>;
   showAddRemoveFooter: Boolean;
   bindingSourceSelectionMode: BindingSourceSelectionMode;
   reorderMode: ListViewReorderMode;
-  //makeNoneElement: Func;
+  //makeNoneElement: Func<VisualElement>;
   allowAdd: Boolean;
-  //overridingAddButtonBehavior: Action;
-  //onAdd: Action;
+  //overridingAddButtonBehavior: Action<BaseListView, Button>;
+  //onAdd: Action<BaseListView>;
   allowRemove: Boolean;
-  //onRemove: Action;
-  //readonly sortedColumns: IEnumerable;
+  //onRemove: Action<BaseListView>;
+  //readonly sortedColumns: IEnumerable<SortColumnDescription>;
   //readonly columns: Columns;
   //readonly sortColumnDescriptions: SortColumnDescriptions;
   sortingMode: ColumnSortingMode;
@@ -579,10 +579,10 @@ export interface MultiColumnTreeView extends BindableElement {
   //readonly itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable;
+  //readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable;
-  //readonly selectedIds: IEnumerable;
+  //readonly selectedIndices: IEnumerable<Int32>;
+  //readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: MultiColumnTreeViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -591,7 +591,7 @@ export interface MultiColumnTreeView extends BindableElement {
   virtualizationMethod: CollectionVirtualizationMethod;
   fixedItemHeight: Single;
   autoExpand: Boolean;
-  //readonly sortedColumns: IEnumerable;
+  //readonly sortedColumns: IEnumerable<SortColumnDescription>;
   //readonly columns: Columns;
   //readonly sortColumnDescriptions: SortColumnDescriptions;
   sortingMode: ColumnSortingMode;
