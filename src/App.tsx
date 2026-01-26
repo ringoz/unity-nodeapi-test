@@ -1,5 +1,5 @@
 import { Activity, Suspense } from 'react';
-import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
+import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
 const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
@@ -35,6 +35,8 @@ function App() {
       <VisualElement>
         <TextElement text="<color='yellow'>Hello World</color>!" />
         <Button>Click me</Button>
+        <RadioButtonGroup name="radioButtonGroup1" choices={["aa", "bb"]}>
+        </RadioButtonGroup>
         <Activity mode='visible'>
           <MyButton style-width-value-value={100}>
             <MyButton.PART_Button text="My Button" enabledSelf={false} style-color-value={[0, 1, 0, 1]} />

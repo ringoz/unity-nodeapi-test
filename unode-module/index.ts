@@ -1,4 +1,4 @@
-import type { Behaviour, BindableElement, Boolean, Bounds, Char, Color, Component, GameObject, Int16, Int32, Int64, List, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, TextElement, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4, VisualElement } from './Packages/net.ringoz.unity.nodeapi/react';
+import type { Behaviour, BindableElement, Boolean, Bounds, Char, Color, Component, GameObject, IEnumerable, Int16, Int32, Int64, List, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, TextElement, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4, VisualElement } from './Packages/net.ringoz.unity.nodeapi/react';
 import { intrinsic } from './Packages/net.ringoz.unity.nodeapi/react';
 
 export * from './Packages/net.ringoz.unity.nodeapi';
@@ -370,7 +370,7 @@ export interface RadioButtonGroup extends BindableElement {
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-  //choices: IEnumerable<String>;
+  choices: IEnumerable<String>;
 }
 export const RadioButtonGroup = intrinsic<RadioButtonGroup>("RadioButtonGroup");
 
@@ -464,10 +464,10 @@ export interface ListView extends BindableElement {
   //itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable<Object>;
+  readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable<Int32>;
-  //readonly selectedIds: IEnumerable<Int32>;
+  readonly selectedIndices: IEnumerable<Int32>;
+  readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: BaseListViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -511,10 +511,10 @@ export interface TreeView extends BindableElement {
   //readonly itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable<Object>;
+  readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable<Int32>;
-  //readonly selectedIds: IEnumerable<Int32>;
+  readonly selectedIndices: IEnumerable<Int32>;
+  readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: TreeViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -543,10 +543,10 @@ export interface MultiColumnListView extends BindableElement {
   //itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable<Object>;
+  readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable<Int32>;
-  //readonly selectedIds: IEnumerable<Int32>;
+  readonly selectedIndices: IEnumerable<Int32>;
+  readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: MultiColumnListViewController;
   showBorder: Boolean;
   reorderable: Boolean;
@@ -579,10 +579,10 @@ export interface MultiColumnTreeView extends BindableElement {
   //readonly itemsSource: IList;
   selectionType: SelectionType;
   readonly selectedItem: Object;
-  //readonly selectedItems: IEnumerable<Object>;
+  readonly selectedItems: IEnumerable<Object>;
   selectedIndex: Int32;
-  //readonly selectedIndices: IEnumerable<Int32>;
-  //readonly selectedIds: IEnumerable<Int32>;
+  readonly selectedIndices: IEnumerable<Int32>;
+  readonly selectedIds: IEnumerable<Int32>;
   //readonly viewController: MultiColumnTreeViewController;
   showBorder: Boolean;
   reorderable: Boolean;
