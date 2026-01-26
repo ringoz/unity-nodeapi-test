@@ -1,4 +1,4 @@
-import type { Behaviour, BindableElement, Boolean, Bounds, Char, Color, Component, GameObject, Int16, Int32, Int64, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, TextElement, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4, VisualElement } from './Packages/net.ringoz.unity.nodeapi/react';
+import type { Behaviour, BindableElement, Boolean, Bounds, Char, Color, Component, GameObject, Int16, Int32, Int64, List, Matrix4x4, ObjectBase, Ptr, Quaternion, Rect, Single, TextElement, Transform, UInt16, UInt32, UInt64, Vector2, Vector3, Vector4, VisualElement } from './Packages/net.ringoz.unity.nodeapi/react';
 import { intrinsic } from './Packages/net.ringoz.unity.nodeapi/react';
 
 export * from './Packages/net.ringoz.unity.nodeapi';
@@ -424,7 +424,7 @@ export interface PopupField<String> extends BindableElement {
   readonly labelElement: Ptr<Label>;
   label: String;
   showMixedValue: Boolean;
-  //choices: List<String>;
+  choices: List<String>;
   readonly text: String;
   //formatSelectedValueCallback: Func<String, String>;
   //formatListItemCallback: Func<String, String>;
