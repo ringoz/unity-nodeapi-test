@@ -1,4 +1,4 @@
-import { Activity, Suspense } from 'react';
+import { Activity, Suspense, useState } from 'react';
 import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
@@ -7,6 +7,7 @@ const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
 });
 
 function App() {
+  const [enabled, setEnabled] = useState(false);
   return (
     <>
       <Activity mode='visible'>
@@ -32,14 +33,14 @@ function App() {
           </Cube>
         </GameObject>
       </Sphere>
-      <VisualElement >
-        <TextElement text="<color='yellow'>Hello World</color>!" onPointerMove={(e) => console.log(e.toString(), e.position)} />
-        <Button onClick={(e) => console.log(e.toString())}>Click me</Button>
+      <VisualElement style-flexGrow-value={1}>
+        <TextElement text="<color='yellow'>Hello World</color>!" onPointerMove={(e) => console.log(e.toString(), e.localPosition)} />
+        <Button onClick={() => setEnabled(!enabled)}>Click me</Button>
         <RadioButtonGroup name="radioButtonGroup1" choices={["aa", "bb"]} onChangeInt32={(e) => console.log(e.newInt32)}>
         </RadioButtonGroup>
         <Activity mode='visible'>
-          <MyButton style-width-value-value={100} onGeometryChanged={(e) => console.log(e.newRect)}>
-            <MyButton.PART_Button text="My Button" enabledSelf={false} style-color-value={[0, 1, 0, 1]} />
+          <MyButton style-width-value-value={100} onGeometryChanged={(e) => console.log(e.toString(), e.newRect)}>
+            <MyButton.PART_Button text="My Button" enabledSelf={enabled} style-color-value={[0, 1, 0, 1]} />
           </MyButton>
         </Activity>
       </VisualElement>
