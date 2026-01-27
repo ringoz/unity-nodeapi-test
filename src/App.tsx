@@ -33,12 +33,12 @@ function App() {
         </GameObject>
       </Sphere>
       <VisualElement >
-        <TextElement text="<color='yellow'>Hello World</color>!" />
+        <TextElement text="<color='yellow'>Hello World</color>!" onPointerMove={(e) => console.log(e.toString(), e.position)} />
         <Button onClick={(e) => console.log(e.toString())}>Click me</Button>
-        <RadioButtonGroup name="radioButtonGroup1" choices={["aa", "bb"]}>
+        <RadioButtonGroup name="radioButtonGroup1" choices={["aa", "bb"]} onChangeInt32={(e) => console.log(e.newInt32)}>
         </RadioButtonGroup>
         <Activity mode='visible'>
-          <MyButton style-width-value-value={100} onPointerMove={(e) => console.log(e.toString(), e.position)} >
+          <MyButton style-width-value-value={100} onGeometryChanged={(e) => console.log(e.newRect)}>
             <MyButton.PART_Button text="My Button" enabledSelf={false} style-color-value={[0, 1, 0, 1]} />
           </MyButton>
         </Activity>
