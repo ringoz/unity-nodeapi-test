@@ -19,7 +19,7 @@ case "$OSTYPE" in
     ;;
 esac
 
-"$UNITY_EXE" -quit -batchmode -nographics -logFile - -projectPath "." -activeBuildProfile "Assets/Settings/Build Profiles/WebDev.asset" -build "Build.web"
+"$UNITY_EXE" -quit -batchmode -nographics -logFile - -projectPath "." -activeBuildProfile "Assets/Settings/Build Profiles/WebDebug.asset" -build "Build.web"
 cd Library/Bee/artifacts/WebGL/ManagedStripped/
 
 NET_REFS=$(find . -name "*.dll" -type f -print0 | sed 's/.\//;/g')
