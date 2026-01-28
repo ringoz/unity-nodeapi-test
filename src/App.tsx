@@ -1,5 +1,5 @@
-import { Activity, Suspense, useState } from 'react';
-import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
+import { Activity, Suspense, useRef, useState } from 'react';
+import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Node, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
 const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
@@ -8,17 +8,24 @@ const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
 
 function App() {
   const [enabled, setEnabled] = useState(false);
+  const cubeRef = useRef<GameObject>(null);
+
+  function handleCubeClick() {
+    (cubeRef.current as unknown as Node).invoke("Message", "Hello World!");
+  }
+
   return (
     <>
       <Activity mode='visible'>
         <Suspense fallback={<Capsule />}>
-          <CubeSpin hideFlags={['None', 'NotEditable']}
+          <CubeSpin ref={cubeRef} hideFlags={['None', 'NotEditable']}
             onAwake={() => console.log('onAwake')}
             onStart={() => console.log('onStart')}
             onEnable={() => console.log('onEnable')}
             onDisable={() => console.log('onDisable')}
             onDestroy={() => console.log('onDestroy')}
-            onMouseDown={() => console.log('onMouseDown')} />
+            onMessage={(e) => console.log('onMessage', e.value)}
+            onMouseDown={handleCubeClick} />
         </Suspense>
       </Activity>
       <Sphere name="sphere1">
