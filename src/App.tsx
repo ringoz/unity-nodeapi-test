@@ -1,5 +1,5 @@
 import { Activity, Suspense, useRef, useState } from 'react';
-import { asset, Button, Capsule, Cube, Cylinder, GameObject, intrinsic, Node, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
+import { asset, Button, Capsule, Cube, Cylinder, Event, GameObject, intrinsic, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
 const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
@@ -10,8 +10,8 @@ function App() {
   const [enabled, setEnabled] = useState(false);
   const cubeRef = useRef<GameObject>(null);
 
-  function handleCubeClick() {
-    (cubeRef.current as unknown as Node).invoke("Message", "Hello World!");
+  function handleCubeClick(e: Event) {
+    e.target.invoke("Message", "Hello World!");
   }
 
   return (
