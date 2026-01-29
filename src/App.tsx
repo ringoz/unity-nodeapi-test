@@ -1,5 +1,5 @@
 import { Activity, Suspense, useRef, useState } from 'react';
-import { asset, Button, Capsule, Cube, Cylinder, Event, GameObject, intrinsic, RadioButtonGroup, Sphere, TextElement, Transform, VisualElement } from 'unode-module';
+import { asset, Button, Capsule, Cube, Cylinder, Event, GameObject, intrinsic, RadioButtonGroup, Sphere, TextElement, Transform, UIDocument, VisualElement, type TNode } from 'unode-module';
 
 const CubeSpin = asset('CubeSpin');
 const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
@@ -8,17 +8,22 @@ const MyButton = Object.assign(intrinsic<VisualElement>('MyButton'), {
 
 function App() {
   const [enabled, setEnabled] = useState(false);
-  const cubeRef = useRef<GameObject>(null);
+  const cubeRef = useRef<TNode<GameObject>>(null);
+  const uiRef = useRef<TNode<UIDocument>>(null);
 
   function handleCubeClick(e: Event) {
     e.target.invoke("Message", "Hello World!");
+    cubeRef.current?.invoke("Message");
+    console.log(cubeRef.current?.getProp('transform.localRotation'));
+    console.log(cubeRef.current?.getProp('hideFlags'));
+    console.log(uiRef.current?.getProp('position'));
   }
 
   return (
     <>
       <Activity mode='visible'>
         <Suspense fallback={<Capsule />}>
-          <CubeSpin ref={cubeRef} hideFlags={['None', 'NotEditable']}
+          <CubeSpin ref={cubeRef} hideFlags={['None', 'NotEditable', 'HideInInspector']}
             onAwake={() => console.log('onAwake')}
             onStart={() => console.log('onStart')}
             onEnable={() => console.log('onEnable')}
@@ -40,6 +45,7 @@ function App() {
           </Cube>
         </GameObject>
       </Sphere>
+      <UIDocument ref={uiRef} />
       <VisualElement style-flexGrow-value={1}>
         <TextElement text="<color='yellow'>Hello World</color>!" onPointerMove={(e) => console.log(e.toString(), e.localPosition)} />
         <Button onClick={() => setEnabled(!enabled)}>Click me</Button>

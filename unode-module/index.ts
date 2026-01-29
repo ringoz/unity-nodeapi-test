@@ -37,14 +37,14 @@ export interface Camera extends Behaviour {
   cullingMask: Int32;
   eventMask: Int32;
   layerCullSpherical: Boolean;
-  cameraType: CameraType;
+  cameraType: CameraType[];
   overrideSceneCullingMask: UInt64;
   layerCullDistances: Single[];
   useOcclusionCulling: Boolean;
   cullingMatrix: Matrix4x4;
   backgroundColor: Color;
   clearFlags: CameraClearFlags;
-  depthTextureMode: DepthTextureMode;
+  depthTextureMode: DepthTextureMode[];
   clearStencilAfterLightingPass: Boolean;
   usePhysicalProperties: Boolean;
   iso: Int32;
@@ -212,8 +212,8 @@ export type SkinWeights = 'None' | 'OneBone' | 'TwoBones' | 'FourBones' | 'Unlim
 export interface Mesh extends ObjectBase {
   indexFormat: IndexFormat;
   readonly vertexBufferCount: Int32;
-  vertexBufferTarget: Target;
-  indexBufferTarget: Target;
+  vertexBufferTarget: Target[];
+  indexBufferTarget: Target[];
   readonly blendShapeCount: Int32;
   readonly bindposeCount: Int32;
   //bindposes: Matrix4x4[];
