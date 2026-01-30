@@ -14,9 +14,9 @@ function App() {
   function handleCubeClick(e: Event) {
     e.target.invoke("Message", "Hello World!");
     cubeRef.current?.invoke("Message");
-    console.log(cubeRef.current?.getProp('transform.localRotation'));
-    console.log(cubeRef.current?.getProp('hideFlags'));
-    console.log(uiRef.current?.getProp('position'));
+    console.log(cubeRef.current?.get('transform.localRotation'));
+    console.log(cubeRef.current?.get('hideFlags'));
+    console.log(uiRef.current?.get('position'));
   }
 
   return (
