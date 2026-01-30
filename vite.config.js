@@ -11,6 +11,11 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    watch: {
+      ignored: ['**/Assets/**', '**/Library/**']
+    }
+  },
   build: {
     rollupOptions: {
       external: [
