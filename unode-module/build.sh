@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-JS_OUT=$(pwd)/Packages/net.ringoz.unity.nodeapi
+JS_OUT=$(pwd)/Packages/unity-nodeapi
 UNITY_VER=$(head -n 1 ProjectSettings/ProjectVersion.txt | cut -d ' ' -f 2)
 
 case "$OSTYPE" in

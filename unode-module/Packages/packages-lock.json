@@ -59,7 +59,7 @@
       }
     },
     "net.ringoz.unity.nodeapi": {
-      "version": "file:net.ringoz.unity.nodeapi",
+      "version": "file:unity-nodeapi",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
